@@ -1,5 +1,7 @@
 # camunda-py
 
+[![Build Status](https://travis-ci.org/IvanovPvl/camunda-py.svg?branch=master)](https://travis-ci.org/IvanovPvl/camunda-py)
+
 > A Python client for Camunda Rest Api
 
 ## Install
