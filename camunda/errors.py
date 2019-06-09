@@ -30,6 +30,10 @@ class NotFound(ApiError):
     pass
 
 
+class ServerError(ApiError):
+    pass
+
+
 def create_error_from_http_exception(e):
     response = e.response
     typ = response.json()['type']
@@ -37,5 +41,7 @@ def create_error_from_http_exception(e):
     cls = ApiError
     if response.status_code == 404:
         cls = NotFound
+    elif response.status_code == 500:
+        cls = ServerError
 
     raise cls(typ, message, response=response)
